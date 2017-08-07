@@ -3,7 +3,6 @@
 	padding: 0;
 }
 .slide{
-	border: 1px solid red;
 	margin: 50px auto;
 	width: 720px;
 	height: 450px;
@@ -11,7 +10,6 @@
 	overflow: hidden;
 }
 .arrow{
-	border: 1px solid red;
 	width: 10%;
 	height: 28%;
 	overflow: hidden;
