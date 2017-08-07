@@ -1,8 +1,12 @@
-function Slide(images){
-	var slide = {
-		length : images.src.length,
+(function(){
+    var Slide = function(images){
+        this.Main_Create(images)
+        return this
+    }
+    Slide.prototype = {
+		length : '',
 		container : document.getElementsByClassName('slide')[0],
-		Createimgs : function(){
+		Createimgs : function(images){
         	var imgsNode = document.createElement('div')
             imgsNode.id = 'images'
             imgsNode.style.width = this.length*100+'%'
@@ -120,8 +124,9 @@ function Slide(images){
         	imgsNode.onmouseout = on
         	imgsNode.onmouseover = off
         },
-        Main_Create : function(){
-        	var imgsNode = this.Createimgs()
+        Main_Create : function(images){
+            this.length = images.src.length
+        	var imgsNode = this.Createimgs(images)
         	var lNode = this.Createdirbt('left')
             var rNode = this.Createdirbt('right')
             var csNode = this.Createcirclebt()
@@ -135,7 +140,6 @@ function Slide(images){
             this.Circlebtonclick(csNode)
             this.Autoplay()
         },
-        
-	    }
-	return slide
-}
+    }
+    window.Slide = Slide
+})()

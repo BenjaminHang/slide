@@ -20,13 +20,11 @@ function Images(){
 		return images
 }
 </script>
-<script type="text/javascript" src="slide.js">//slide接口</script>
+<script type="text/javascript" src="slide.js">//slide接口,封装成类</script>
 <script type="text/javascript">//主函数
 	(function(){
 	var images = Images()//images为对象格式
-    var slide = Slide(images)
-	slide.Main_Create()
-    
+    var slide = new Slide(images)    
 })()
 </script>
 
